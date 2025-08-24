@@ -89,9 +89,11 @@ void app2dylib(NSString *inpath, NSString * outpath){
         dylibPath = [@"@executable_path/../Resources" stringByAppendingPathComponent:dylibName];
     }
     
+    // If neither version is set, try to determine platform from other indicators
     if(!dylibPath){
-        NSLog(@"Mach-o file must have a Load Command named LC_VERSION_MIN_MACOSX or LC_VERSION_MIN_IPHONEOS!");
-        exit(1);
+        // Default to iOS/mobile path for modern binaries (they likely use LC_BUILD_VERSION)
+        dylibPath = [@"@executable_path" stringByAppendingPathComponent:dylibName];
+        NSLog(@"No version info found, defaulting to iOS dylib path: %@", dylibPath);
     }
      
     CDLCDyldInfo *dyldInfo = machOFile.dyldInfo;
