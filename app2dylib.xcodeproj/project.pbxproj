@@ -120,7 +120,7 @@
 				8F54CA441DA429A600221131 /* class-dump */,
 				8F54CA461DA429A600221131 /* deprotect */,
 				8F54CA481DA429A600221131 /* formatType */,
-				8F54CA4A1DA429A600221131 /* UnitTests.xctest */,
+				8F54CA4A1DA429A600221131 /* UnitTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -166,6 +166,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 8F54CA221DA4292900221131;
@@ -213,10 +214,10 @@
 			remoteRef = 8F54CA471DA429A600221131 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		8F54CA4A1DA429A600221131 /* UnitTests.xctest */ = {
+		8F54CA4A1DA429A600221131 /* UnitTests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = UnitTests.xctest;
+			path = UnitTests.octest;
 			remoteRef = 8F54CA491DA429A600221131 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -332,6 +333,7 @@
 		8F54CA331DA4292900221131 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/class-dump/Source/**";
 			};
@@ -340,6 +342,7 @@
 		8F54CA341DA4292900221131 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/class-dump/Source/**";
 			};
